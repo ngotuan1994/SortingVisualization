@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Visualization</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <H1>Sorting</H1>
+  <div id ="head_container">
+    <h2 id="runtime"> run time:  </h2>
+    <h2 id="comparison">comparision</h2>
+  </div>
+
+
+  <form action="javascript:changeType()">
+    <label for="sort">Choose sorting algorithm</label>
+    <input list="sort"  name="sort" value="mergeSort" >
+      <datalist id="sort">
+        <option value="BubleSort" ></option>
+        <option value="QuickSort"></option>
+        <option value="SelectionSort"></option>
+        <option value="RadishSort"></option>
+    </datalist>
+    <input type="submit">
+
+  </form>
+  <div id="container">
+
+  </div>
+  <hr>
+  <div >
+    <button onclick="init()">init</button>
+    <button onclick="play()">play</button>
+    <form action="javascript:speedChange()">
+      <label for="speed" >Choose speed</label>
+      <input type="range" id="speed" name="speed" min="1" max="100">
+      <input type="submit">
+
+    </form>
+    <form action="javascript:sizeChange()">
+      <label for="speed">Choose size of array</label>
+      <input type="number" id="size" name="size" min="1" max="100" value="30" placeholder="Range 1-100">
+      <input type="submit">
+
+    </form>
+
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
