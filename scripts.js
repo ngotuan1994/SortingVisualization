@@ -6,7 +6,7 @@ container = document.getElementById("container");
 const run = async () => { await init(n) };
 run();
 
-function init(n) {
+function init() {
   container.innerHTML = "";
   for (let i = 0; i < n; i++) {
     array[i] = Math.floor(Math.random() * 100);
@@ -71,7 +71,23 @@ async function BubleSort(arr) {
 
   }
 };
+async function selectionSort(arr) {
+  let idx;
+  for (let i = 0; i < arr.length; i++) {
+    idx = i;
+    for (let j = 0 + i; j < arr.length; j++) {
+      if (arr[j] <= arr[idx]) {
+        idx = j;
+      }
 
+
+    }
+    [arr[i], arr[idx]] = [arr[idx], arr[i]];
+    showBars(arr,i,idx);
+    await sleep(speed);
+  }
+showBars(arr)
+  }
 async function merge(start, end) {
     let mid = parseInt((start + end) >> 1);
     let start1 = start, start2 = mid + 1
@@ -139,8 +155,9 @@ const mergeSort = async (start, end) => {
 
 async function play() {
 
-  await mergeSort(0, n - 1);
+  // await mergeSort(0, n - 1);
   // BubleSort(array);
+  selectionSort(array);
 
 
 }
